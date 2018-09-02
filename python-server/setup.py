@@ -14,9 +14,6 @@ except ImportError:
 with open('README.rst') as readme_file:
     readme = readme_file.read()
 
-with open('HISTORY.rst') as history_file:
-    history = history_file.read().replace('.. :changelog:', '')
-
 parsed_requirements = parse_requirements(
     'requirements/prod.txt',
     session=pip.download.PipSession()
@@ -35,8 +32,8 @@ test_requirements = [str(tr.req) for tr in parsed_test_requirements]
 setup(
     name='python-server',
     version='0.1.0',
-    description="Python Boilerplate contains all the boilerplate you need to create a Python package.",
-    long_description=readme + '\n\n' + history,
+    description="",
+    long_description=readme + '\n\n',
     author="Artem Sabitov",
     author_email='a.r.sabitov@gmail.com',
     url='https://github.com/artem_sabitov/python-server',
